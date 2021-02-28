@@ -16,7 +16,7 @@ class Goodie {
 
 public class Main {
   public static void main(String[] args) throws Exception {
-    FileInputStream fis=new FileInputStream("input.txt");       
+    FileInputStream fis=new FileInputStream("input.txt"); //input file      
     Scanner sc=new Scanner(fis);
     int n = Integer.parseInt(sc.nextLine().split(": ")[1]);
     sc.nextLine(); sc.nextLine(); sc.nextLine();
@@ -35,7 +35,7 @@ public class Main {
         return a.price - b.price; 
       } 
     });
-
+    //calculating differnces between highest and lowest price
     int mindiff = goodies_items.get(goodies_items.size()-1).price;
     int minindex = 0;
     for(int i=0;i<goodies_items.size()-n+1;i++) {
@@ -46,9 +46,7 @@ public class Main {
         minindex = i;
       }
     }
-    
-    
-
+    //output file
     FileWriter fw = new FileWriter("output.txt");
     fw.write("Here the goodies that are selected for distribution are:\n\n");
     for(int i=minindex;i<minindex + n; i++) {
